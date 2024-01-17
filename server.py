@@ -245,7 +245,7 @@ def track_single_ip():
     ip = request.form['ip']
     # Call ./track with the IP
     print(f"server {ip}")
-    subprocess.run(['./track', ip], shell=True)
+    subprocess.run([f'./track {ip}'], shell=True)
     return jsonify({"message": "Tracking started for IP: {}".format(ip)})
 
 @app.route('/track_connection', methods=['POST'])
@@ -253,7 +253,7 @@ def track_connection():
     ip1 = request.form['ip1']
     ip2 = request.form['ip2']
     # Call evaluation.exe with the IPs
-    subprocess.run(['./eval', ip1, ip2], shell=True)
+    subprocess.run([f'./eval {ip1} {ip2}'], shell=True)
     return jsonify({"message": "Tracking started for IPs: {} and {}".format(ip1, ip2)})
 
 

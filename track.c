@@ -59,7 +59,7 @@ int main(int argc, char *argv[]) {
     char filename[100];
 
     if (argc != 2) {
-        printf("tracker %s", argv[1]);
+        printf("tracker %s", argv[0]);
         fprintf(stderr, "Usage: %s <IP>\n", argv[0]);
         return 1;
     }
