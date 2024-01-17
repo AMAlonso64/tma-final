@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Miner Tracker - Dashboard</title>
+    <link rel="stylesheet" type="text/css" href="{{url_for('static',filename='home_style.css')}}">
+    
+</head>
+<body>
+
+<div id="top-bar">
+    <a href="/" class="custom-link">
+        <h1>TMA Project</h1>
+    </a>
+    <h1 id="title">Miner Tracker</h1>
+   
+</div>
+
+<div id="dashboard">
+    <div id="menu">
+        <a href="{{url_for('start_sampling')}}" class="menu-button">Sampling</a> <!-- New menu item for Sampling -->
+        <a href="{{url_for('analyze_folder')}}" class="menu-button">Analyze Sampling</a> 
+        <a href="{{url_for('connection_analysis')}}" class="menu-button">Tracking</a>
+        <a href="{{url_for('plotsMenu')}}" class="menu-button">Monitoring Data</a>
+        <a href="{{url_for('analizerConf')}}" class="menu-button">Analyzer Configuration</a>
+    </div>
+    <div id="content">
+        <!-- Aquí puedes agregar el contenido del dashboard -->
+        <h1>Bienvenido al Dashboard</h1>
+        <p>Selecciona una opción del menú para comenzar.</p>
+    </div>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Miner Tracker - Graphs</title>
+    <link rel="stylesheet" type="text/css" href="{{url_for('static',filename='home_style.css')}}">
+    <style>
+        /* Define the grid layout */
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 16px; /* Adjust the gap as needed */
+        }
+
+        /* Style for each grid item */
+        .grid-item {
+            width: 100%;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+
+<div id="top-bar">
+    <a href="/" class="custom-link">
+        <h1>TMA Project</h1>
+    </a>
+   
+</div>
+
+<div id="dashboard">
+    <div id="menu">        
+        <a href="{{url_for('start_sampling')}}" class="menu-button">Sampling</a> <!-- New menu item for Sampling -->
+        <a href="{{url_for('analyze_folder')}}" class="menu-button">Analyze Sampling</a> 
+        <a href="{{url_for('connection_analysis')}}" class="menu-button">Tracking</a>
+        <a href="{{url_for('plotsMenu')}}" class="menu-button">Monitoring Data</a>
+        <a href="{{url_for('analizerConf')}}" class="menu-button">Analyzer Configuration</a>
+    </div>
+    
+    <div id="content">
+        <!-- Aquí puedes agregar el contenido del dashboard -->
+        <h1>Plotting Data from {{ips}}</h1>
+        <a href="/showPlots", class="back-button">
+            <button>return</button>
+        </a>
+        {% for plot in plots %}
+        <img src="{{ url_for('get_image', image=plot)}}" alt="{{ plot }}">
+        {% endfor %}
+    </div>
+</div>
+
+</body>
+</html>
